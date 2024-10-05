@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "9eZFYf_OqSm38TDiw",
+      });
+   })();
+</script>
+<script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+         html {
+            scroll-behavior: smooth;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-bar {
+    width: 100%;
+    max-width: 100vw;
+    height: 7vh;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensure the navbar stays on top */
+}
+
+.nav-bar h1 {
+    display: flex;
+    color: whitesmoke;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.list li {
+    list-style: none;
+    color: whitesmoke;
+    font-size: 22px;
+}
+
+.list a {
+    color: whitesmoke;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#home {
+    margin-top: 7vh; /* Match navbar height */
+    width: 100%;
+    max-width: 100vw;
+    height: 92vh;
+   
+    display: flex;
+}
+
+.left {
+    width: 60%;
+    max-width: 60vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    width: 40%;
+    max-width: 40vw;
+    height: auto;
+    background-color: blueviolet;
+    background-image: url("ali.jfif");
+    mix-blend-mode: normal;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    text-align: center;
+    justify-content: end;
+    align-items: end;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(230, 230, 230);
+    clip-path: polygon(70% 0, 100% 51%, 100% 51%, 68% 100%, 0 100%, 0 0);
+    width: 100%;
+    max-width: 100vw;
+    height: 60vh;
+    text-align: justify;
+    margin-left: 0px;
+    margin-top: 7vh; /* Ensure it matches navbar height */
+}
+
+.content h1 {
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #434aac, #3f57e4, #33438b);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    font-weight: 600; /* Ensure better readability */
+}
+
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+
+.content h3,
+.content p,
+.content h1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 45px;
+}
+
+.content h3 {
+    margin-top: 10px;
+    color: darkslateblue;
+    font-weight: bolder;
+    font-size: 1.5em; /* Consistent size */
+}
+
+.content p {
+    width: 75%;
+    font-size: 1em; /* Ensure readability */
+}
+
+
+        body {
+            background-color: blueviolet;
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            /* background-color: whitesmoke; */
+            border-radius: 50%;
+            border: 2px solid rgb(59, 42, 51);
+            text-align: center;
+        }
+
+        .circle a i {
+            margin-top: 4px;
+            font-size: 22px;
+          
+        }
+
+        .social {
+            /* width: 100%;
+            max-width: 100vw; */
+            display: flex;
+            /* flex-wrap: wrap; */
+            gap: 20px;
+            margin-left: 40px;
+            margin-top: 20px;
+          
+        }
+        /* From Uiverse.io by gharsh11032000 */ 
+.button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  top: -1px;
+  margin: auto;
+  width: 160px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.button:hover::after {
+  filter: blur(30px);
+}
+
+.button:hover::before {
+  transform: rotate(-180deg);
+}
+
+.button:active::before {
+  scale: 0.7;
+}
+.btn{
+    display: flex;
+   margin-top: 35px;
+   margin-left: 40px;
+}
+#education{
+    width: 100%;
+    max-width: 100vw;
+    height: 96vh;
+   
+    background-color: none;
+    display: flex;
+
+   flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: start; */
+    gap: 5px;
+   
+   
+}
+
+
+.ed h1{
+   color: whitesmoke;
+   position: relative;
+   left: 20%;
+   top: 163px;
+   
+}
+
+.left-1{
+    width: 100%;
+    max-width: 100vw;
+
+    height: 90%;
+    
+    /* background-color: #fc00ff;  */
+    border-radius: 10px; 
+    /* border: 3px solid; */
+    display: flex;
+    flex-wrap: wrap;
+   
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    margin-top: 55px;
+}
+.right-1{
+    width: 30%;
+    max-width: 30vw;
+    height: 90%;
+    background-color:#33438b; 
+    border-radius: 10px; 
+    border: 3px solid;
+    margin-top: 55px;
+}
+.SE{
+    padding: 5px;
+    width: 30%;
+    max-width:30vw ;
+    height: 40%;
+    /* height: auto; */
+    /* background-color: black; */
+    color: whitesmoke;
+    text-align:justify;
+    border-radius: 5px;
+    border: 3px solid;
+    background-color: gray;
+}
+.ed{
+
+}
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+
+.SE p{
+    font-size: 13px;
+    margin-left: 10px;
+    color: rgb(216, 216, 216);
+   
+}
+.SE h3, .SE h4{
+    font-size: 18px;
+    margin-left: 10px;
+   
+}
+.fsc{
+    padding: 5px;
+    width: 30%;
+    height: 40%;
+    /* background-color: black; */
+    color: whitesmoke; 
+    text-align:justify; 
+    border-radius: 5px;
+    border: 3px solid;
+    background-color: gray;
+    /* height: auto; */
+}
+.fsc h3,.fsc h4{
+    margin-left: 10px;
+    color:whitesmoke;
+}
+.fsc h5{
+    font-size: 13px;
+    margin-left: 10px;
+    color: rgb(216, 216, 216);
+}
+.matric{
+    padding: 5px;
+    width: 30%;
+    height: 40%;
+    /* background-color: black; */
+    color: whitesmoke; 
+    text-align:justify; 
+    border-radius: 5px;
+    border: 3px solid;
+    /* height: auto; */
+    background-color: gray;
+}
+.matric h3,.matric h4{
+    text-align: justify;
+    font-size: 16px;
+    margin-left: 10px;  
+    color:whitesmoke;
+}
+.matric h5{
+    font-size: 13px;
+    margin-left: 10px;
+    color: rgb(216, 216, 216);
+}
+#skill h1{
+    color: aquamarine;
+    text-align: center;
+  
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container1 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px 100px;
+  overflow: hidden;
+  background:blueviolet;
+}
+
+.box {
+  position: relative;
+  width: 240px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(#fff, #fff, #e3e3e3);
+  filter: blur(1px);
+  z-index: 1;
+}
+
+.box::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: -1px;
+  width: 20px;
+  height: 100%;
+  background: #9d9d9d;
+  filter: blur(1px);
+  z-index: 1;
+}
+
+.box .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+
+.box .shadow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(100% + 5px);
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(rgba(0,0,0,0.075), transparent);
+  transform: skewX(45deg);
+}
+
+.box .shadow::after {
+  content: '';
+  position: absolute;
+  bottom: -200%;
+  left: calc(100% + 15px);
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(rgba(0,0,0,0.075), transparent);
+  transform: skewX(45deg);
+}
+
+.box .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#dbdae1, #a3aaba);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1),
+    15px 15px 15px rgba(0,0,0,0.1),
+    20px 20px 20px rgba(0,0,0,0.1),
+    50px 50px 50px rgba(0,0,0,0.1),
+    inset 3px 3px 2px #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box .content .percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.box .content .percent::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 20px;
+  background: #555;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.75rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.box .content .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+
+.box .content .percent svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 3;
+  stroke: rgba(0,0,0,0.05);
+  transform: translate(5px, 5px);
+}
+
+.box .content .percent svg circle:nth-child(2) {
+  stroke: #555;
+  stroke-dasharray: 440;
+  stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+  opacity: 0;
+  animation: fadeIn 1s linear forwards infinite;
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.box .content .percent .dot {
+  position: absolute;
+  inset: 5px;
+  z-index: 10;
+  animation: animateDot 2s linear forwards infinite;
+}
+
+@keyframes animateDot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(calc(3.6deg * var(--num)));
+  }
+}
+
+.box .content .percent .dot::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #555;
+  border-radius: 50%;
+}
+
+.box .content .number {
+  position: relative;
+  inset: 0;
+  opacity: 0;
+  animation: fadeIn 1s linear forwards infinite;
+  animation-delay: 2.5s;
+}
+
+.box .content .number h2 {
+  font-size: 2.5rem;
+  color: #555;
+}
+
+.box .content .number h2 span {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+#contact{
+  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url("https://tse2.mm.bing.net/th?id=OIP.3nO7YVi8ri2_XyH42tvbigHaEK&pid=Api&P=0&h=220"); */
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the background covers the entire container */
+    background-position: center;
+}
+.box1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .box1 label {
+            align-self: flex-start;
+            margin-top: 10px;
+        }
+        .box1 input[type="text"], .box1 input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .box1 input[type="submit"], .box1 input[type="reset"] {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        .box1 input[type="reset"] {
+            background-color: #dc3545;
+        }
+        label{
+            color: whitesmoke;
+        }
+        .box1 textarea {
+    width: 100%; /* Takes full width of the parent */
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 700px){
+    .SE{
+    height: fit-content;
+  }
+  .matric , .fsc{
+    height: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav-bar{
+    display: flex;
+   align-items: center;
+    flex-direction: column;
+  }
+  .list{
+    gap: 10px;
+  }
+  .content h3,.content h1,.content p{
+    margin-left: 10px;
+   
+   
+  }
+  .content h3,.content p{
+   
+    font-size: 15px;
+   
+ 
+  }
+ 
+  .social{
+    margin-left:5px;
+    /* margin-right: 10px; */
+    gap: 10px;
+  }
+  .btn{
+    margin-left: 5px;
+  }
+  .ed h1{
+   
+  
+    position: relative;
+    left:90%;
+    top:60px;
+  }
+  #education{
+    justify-content: start;
+    gap: 2px;
+  }
+   .fsc h3,.fsc h4, .fsc h5{
+    margin-left: 1px;
+  }
+  .matric h3,.matrich4,.matric h5{
+    margin-left: 1px;
+  }
+  .SE h3, .SE h4,.SE p{
+    margin-left: 1px;
+  }
+  .left-1{
+    display: flex;
+    flex-direction: column;
+  }
+  .SE{
+    height: fit-content;
+  }
+  .matric , .fsc{
+    height: auto;
+  }
+ 
+  
+}
+
+/* #image{
+    mix-blend-mode: color-burn;
+} */
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <h1>PortFolio</h1>
+            <div class="list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skill">Skills</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </div>
+        </nav>
+        <div id="home" data-aos="fade-up">
+            <div class="left">
+                <div class="content">
+                    <h3>Assalam o Alaikum! I'm</h3>
+                    <h1>ALI RAZA</h1>
+                    <h3>Frontend Developer</h3>
+                    <p>I am a 6th-semester Software Engineering student with expertise in C++, HTML, CSS, and Bootstrap,
+                        having developed projects like an online voting system and a student management system. I am
+                        passionate about building efficient software and expanding my skills.</p>
+                    <div class="social">
+                        <div class="circle">
+                            <a href="https://www.instagram.com/rajpootzwl?igsh=MzNlNGNkZWQ4Mg=="><i
+                                    class="fa-brands fa-instagram"></i></a>
+                        </div>
+                        <div class="circle">
+                            <a href="https://www.facebook.com/profile.php?id=100059047554419"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                        </div>
+                        <div class="circle">
+                            <a
+                                href="https://www.linkedin.com/in/ali-raza-8ba69a2a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                    class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                        <div class="circle">
+                       <a href="https://wa.me/03043558397"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="btn">
+                    <button class="button">
+                        Download Resume
+                      </button>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <!-- <img  id="image" src="https://tse4.mm.bing.net/th?id=OIP.Blj2M36K5WYTyNd6v6Jz0QHaJf&pid=Api&P=0&h=220" alt="" srcset=""> -->
+            </div>
+        </div>
+      
+       
+        <div id="education" data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom">
+      
+        <div class="ed">
+          <h1>Education</h1>
+         
+          </div>
+            <div class="left-1">
+                 <div class="SE">
+                   <h3>Bachelor of Science in Software Engineering</h3>
+                    
+                   <h4>Lahore Garrison University <br> <b>Expected Completion:</b> 2025 </h4>
+                   <p> <b>Relevant courses:</b>
+                    <br>
+                    Computer Networking
+                    <br>
+                    Software Construction and Development
+                    <br>
+                    Operating Systems
+                    <br>
+                    Object-Oriented Programming (OOP)
+                    <br>
+                    Programming Fundamentals (PF)
+                </p>
+                   
+                 </div>
+                 <div class="fsc">
+                  <h3>Intermediate (FSc Pre-Medical)</h3>
+                  <h4>Govt. Degree College Zafarwal</h4>
+                  <h4>2021</h4>
+                  <h5><b>Studied core subjects:</b> Biology, Chemistry, and Physics.</h5>
+                  <h5>Gained foundational knowledge in medical sciences and analytical thinking.</h5>
+                 </div>
+                 <div class="matric">
+                   <h3>Matriculation (Science)</h3>
+                   <h4>Gazali Public School, Zafarwal
+                    <br>
+                    <b> Completed:</b> 2019</h4>
+                    <h5><b>Core subjects:</b> <br> Biology <br> Physics <br>Chemistry</h5>
+                 </div>
+            </div>
+             <!-- <div class="right-1"></div> -->
+         </div> 
+         <div id="skill">
+         
+          <div class="container1">
+          
+            <div class="box">
+              <div class="shadow"></div>
+              <div class="content">
+                <div class="percent" data-text="HTML" style="--num: 85">
+                  <div class="dot"></div>
+                  <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                  </svg>
+                </div>
+                <div class="number">
+                  <h2>85<span>%</span></h2>
+                </div>
+              </div>
+            </div>
+          
+            <div class="box">
+              <div class="shadow"></div>
+              <div class="content">
+                <div class="percent" data-text="CSS" style="--num: 57">
+                  <div class="dot"></div>
+                  <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                  </svg>
+                </div>
+                <div class="number">
+                  <h2>57<span>%</span></h2>
+                </div>
+              </div>
+            </div>
+          
+            <div class="box">
+              <div class="shadow"></div>
+              <div class="content">
+                <div class="percent" data-text="JS" style="--num: 30">
+                  <div class="dot"></div>
+                  <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                  </svg>
+                </div>
+                <div class="number">
+                  <h2>30<span>%</span></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+         <div id="contact">
+          <form class="box1" action="submit_page.html" method="POST">
+            <label for="Name">Enter your Name</label>
+            <input type="text" name="Name" id="Name" required>
+            
+            <label for="email">Enter your email</label>
+            <input type="email" name="email" id="email" required>
+            
+            <label for="msg">Enter your message</label>
+            <textarea name="msg" id="msg" maxlength="1000" rows="4" cols="50"></textarea>
+            
+            
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>   
+         </div>
+    </div> 
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+
+</html>
