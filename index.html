@@ -201,7 +201,10 @@
   border-radius: 8px;
   cursor: pointer;
 }
-
+.button a{
+  color: white;
+  text-decoration: none;
+}
 .button::before {
   content: '';
   position: absolute;
@@ -514,7 +517,7 @@
   stroke-dasharray: 440;
   stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
   opacity: 0;
-  animation: fadeIn 1s linear forwards infinite;
+  animation: fadeIn 1s linear forwards ;
   animation-delay: 2.5s;
 }
 
@@ -559,7 +562,7 @@
   position: relative;
   inset: 0;
   opacity: 0;
-  animation: fadeIn 1s linear forwards infinite;
+  animation: fadeIn 1s ease-in forwards infinite;
   animation-delay: 2.5s;
 }
 
@@ -747,7 +750,7 @@
                     </div>
                     <div class="btn">
                     <button class="button">
-                        Download Resume
+                       <a href="resume.pdf">Download Resume</a> 
                       </button>
                     </div>
                 </div>
